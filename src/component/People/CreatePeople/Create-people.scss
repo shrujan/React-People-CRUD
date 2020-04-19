@@ -17,4 +17,25 @@
 //   padding: 20px;
 //   border: 1px solid #888;
 //   width: 80%;
+
+    .create-people {
+
+        .row {
+            margin: 20px 0 10px 10px;
+            
+            input {
+                height: 30px;
+                width: 90%;
+                padding-left: 20px;
+            }
+            
+            
+        }
+
+        .row:first-of-type {
+            margin-top: 30px;
+        }
+
+
+    }
 }
