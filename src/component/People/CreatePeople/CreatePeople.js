@@ -1,10 +1,7 @@
 import React from 'react';
 import './Create-people.scss'
 
-const CreateNew = () => {
-
-  
-
+const CreateNew = (props) => {
     return (
         <div className="create-people">
 
@@ -17,7 +14,8 @@ const CreateNew = () => {
             <div className="row">
                 <input type ="text" placeholder="Enter Age:"></input>
             </div>
-            <div className="row">
+            <div className="row save-btn-container">
+                <input className="cancel" onClick={props.cancel} type="reset"  value="Cancel" />
                 <input className="save" type="submit"  value="Save" />
             </div>
             

@@ -8,7 +8,7 @@ import Weather from '../Weather/Weather'
 import './Header.scss'
 
 
-const Header = () => {
+const Header = (prop) => {
     return (
         
         <div >
@@ -19,7 +19,8 @@ const Header = () => {
                     <Routing></Routing>
                 </div>
 
-                <Route path="/" exact component={People}></Route>
+                <Route path="/" exact render={ () => <People { ...prop } /> }></Route>
+
                 <Route path="/Weather" exact component={Weather}></Route>
 
             </BrowserRouter>

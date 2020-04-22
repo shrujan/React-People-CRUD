@@ -6,17 +6,26 @@ import CreateNew from '../component/People/CreatePeople/CreatePeople';
 import './People.scss'
 
 class People extends Component {
-    showModal() {
-        alert('hi')
+    createNewUser() {
+        console.log('Here')
+        return(
+            <div className="create-new-modal">
+                    <CreateNew
+                        submit={this.props.createNew}
+                        cancel= {this.props.toggleModal}
+                    ></CreateNew>
+                </div>
+        )
     }
 
     render () {
+        
         return (
             <div>
                 
                 <div>
                     Search
-                    <span onClick={this.showModal} className='create-new-btn'>Create New</span>
+                    <span onClick={this.props.toggleModal} className='create-new-btn'>Create New</span>
 
                     
                 </div>
@@ -24,11 +33,8 @@ class People extends Component {
                     People = {JSON.stringify(this.props.people)}
                 ></PeopleList>
 
-                    <div className="create-new-modal">
-                        <CreateNew
-                            submit={this.props.createNew}
-                        ></CreateNew>
-                    </div>
+                { ( this.props.showModal === true ) ? this.createNewUser() : null}
+                
 
             </div>
         )

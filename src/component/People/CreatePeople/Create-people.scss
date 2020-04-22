@@ -1,5 +1,5 @@
 .create-new-modal {
-    height: 50%;
+    height: 261px;
     position: fixed;
     width: 40%;
     margin: 15% 25%;
@@ -11,15 +11,7 @@
     margin-left: -20%; // half of width
     background-color: #ffffff;
 
-
-//     background-color: #fefefe;
-//   margin: 15% auto; /* 15% from the top and centered */
-//   padding: 20px;
-//   border: 1px solid #888;
-//   width: 80%;
-
     .create-people {
-
         .row {
             margin: 20px 0 10px 10px;
             
@@ -28,8 +20,28 @@
                 width: 90%;
                 padding-left: 20px;
             }
+
+            .save {
+                background-color: #59dce2;
+                height: 35px;
+                width: 40%;
+                margin-right: 40px;
+                float: right;
+            }
+
+            .cancel {
+                background-color: red;
+                height: 35px;
+                float: left;
+                width: 40%;
+            }
             
             
+        }
+
+        .save-btn-container {
+            width: 100%;
+            margin: 10px;
         }
 
         .row:first-of-type {

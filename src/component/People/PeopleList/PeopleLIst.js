@@ -5,11 +5,9 @@ import './Peoplelist.scss';
 
 const generateDOM = (prop) => {
     let peopleDOM = null;
-    console.log(JSON.parse(prop.People));
     let peopleList= JSON.parse(prop.People);
     peopleDOM = (
         peopleList.map((person) => {
-            console.log(person)
                 return <Fragment key= {person.id}>
                             <div> {person.name} </div> 
                             <div>Address</div>
@@ -18,7 +16,6 @@ const generateDOM = (prop) => {
         })
     
     )
-    console.log(peopleDOM)
     return peopleDOM;
 }
 
