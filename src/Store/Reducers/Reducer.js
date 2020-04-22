@@ -10,6 +10,16 @@ const Reducer = (state = PeopleState, action) => {
         return state.People;
     }
 
+    if (action.type === 'CREATE_NEW') {
+        console.log(action.data);
+        let peopleList = [...state.People, action.data];
+
+        return {
+            ...state,
+            People: peopleList
+        }
+    }
+
     return state
 
 }

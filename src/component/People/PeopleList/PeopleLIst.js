@@ -7,12 +7,16 @@ const generateDOM = (prop) => {
     let peopleDOM = null;
     let peopleList= JSON.parse(prop.People);
     peopleDOM = (
-        peopleList.map((person) => {
-                return <Fragment key= {person.id}>
+        peopleList.map((person, index) => {
+                return <div className='people-data'
+                        key={index}
+                        >  
                             <div> {person.name} </div> 
-                            <div>Address</div>
-                            <a href ='#' >Edit</a>
-                        </Fragment>
+                            <div>{person.address || 'Address'}</div>
+                            <a href ='#' onClick={}>Edit</a>
+
+                        </div>
+                            
         })
     
     )

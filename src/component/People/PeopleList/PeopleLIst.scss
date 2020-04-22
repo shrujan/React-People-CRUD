@@ -3,7 +3,7 @@ $table-width: 30%;
 
 %list-style {
     width: 100%;
-    display: flex;
+    // display: flex;
     height: $height;
     line-height: $height;
     text-align: center;
@@ -12,18 +12,29 @@ $table-width: 30%;
 .list-header {
     @extend %list-style;
     background: #ccc;
+    display: flex;
 
+    
     div {
-        width: $table-width
+        width: $table-width;
     }
 }
 
 .people-list {
     @extend %list-style;
 
-    div {
-        width: $table-width;
+    .people-data {
+        display: block;
+        width: 100%;
+        
+        div {
+            width: 30%;
+            float: left;
+        }
     }
+
+    
+    
     a {
         margin: auto;
     }
