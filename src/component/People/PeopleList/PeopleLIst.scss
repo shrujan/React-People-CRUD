@@ -1,12 +1,18 @@
 $height: 45px;
-$table-width: 30%;
+$table-width: 25%;
 
 %list-style {
     width: 100%;
-    // display: flex;
     height: $height;
     line-height: $height;
     text-align: center;
+}
+
+%edit-delete {
+    font-size: 21px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 15px;
 }
 
 .list-header {
@@ -28,8 +34,18 @@ $table-width: 30%;
         width: 100%;
         
         div {
-            width: 30%;
+            width: $table-width;
             float: left;
+        }
+
+        .delete-action {
+            @extend %edit-delete;
+            color: red;
+        }
+        
+        .edit-btn {
+            @extend %edit-delete;
+            font-size: 20px;
         }
     }
 
