@@ -14,10 +14,13 @@ class People extends Component {
         this.state = {
             editUserFlag: false,
             editUserObj: {}
+            // filteredPeople: this.props.people
         }
 
         this.modifyData = this.modifyData.bind(this);
         this.deleteUser = this.deleteUser.bind(this);
+        this.getNewUserData = this.getNewUserData.bind(this);
+        this.editUsers = this.editUsers.bind(this);
     }
 
     getNewUserData(event, mode, id) {
@@ -60,7 +63,8 @@ class People extends Component {
 
         this.setState({
             editUserFlag: true,
-            editUserObj: peopleObj
+            editUserObj: peopleObj,
+            searchParam: ''
         })
 
         this.props.toggleModal();
@@ -76,33 +80,55 @@ class People extends Component {
 
     deleteUser(userId) {
         console.log(userId)
-        this.props.deleteUser(userId)
+        this.props.deleteUser(userId);
     }
 
     createNewUserComponent(userObj) {
         return(
             <div className="create-new-modal">
                     <CreateNew
-                        submit={this.getNewUserData.bind(this)}
-                        cancel= {this.props.toggleModal}
+                        submit={ this.getNewUserData }
+                        cancel= { this.props.toggleModal }
                         edit={userObj !== null ? userObj : null}
-                        modify = { this.modifyData.bind(this) }
+                        modify = { this.modifyData }
                     ></CreateNew>
                 </div>
         )
     }
 
+    filterPersons = (event) => {
+        console.log(event.target.value);
+        // let peopleList = this.props.people;
+        this.setState({
+            ...this.state,
+            searchParam: event.target.value
+        })
+    }
+
     render () {
-        
+        let peopleListData = this.props.people;
+
+        if(this.state.searchParam !== '' && this.state.searchParam !== undefined) {
+            peopleListData = peopleListData.filter((person) => {
+                if (person.name.includes(this.state.searchParam)) {
+                    return person
+                }
+            })
+        }
+
         return (
-            <div>
-                <div>
-                    Search
-                    <span onClick={this.createNew.bind(this)} className='create-new-btn'>Create New</span>
+            <div className= 'people-container'>
+                <div className="people-operations">
+                    <div className="search">    
+                        {/* <label>Search:</label> */}
+
+                        <input typee="text" placeholder='Search Name' onChange={ this.filterPersons.bind(this) }></input>
+                    </div>
+                    <div className="create-new" onClick={this.createNew.bind(this)} className='create-new-btn'>Create New</div>
                     
                 </div>
                 <PeopleList
-                    People = {JSON.stringify(this.props.people)}
+                    People = {JSON.stringify(peopleListData)}
                     edit={ this.editUsers.bind(this) }
                     delete = { this.deleteUser }
                 ></PeopleList>

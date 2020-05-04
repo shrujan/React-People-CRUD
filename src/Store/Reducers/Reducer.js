@@ -49,8 +49,6 @@ const Reducer = (state = PeopleState, action) => {
             ...state,
             People: userList
         }
-
-        
     }
 
     return state

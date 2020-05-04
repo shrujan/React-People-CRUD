@@ -2,13 +2,24 @@ import React, { Fragment }  from 'react';
 
 import './Peoplelist.scss';
 
+const classList = (person) => {
+    let classNames = 'people-data';
+
+    if (person.age === undefined || 
+        person.address === undefined || 
+        person.name === undefined) {
+        classNames += " warning"
+    }
+
+    return classNames;
+}
 
 const generateDOM = (prop) => {
     let peopleDOM = null;
     let peopleList= JSON.parse(prop.People);
     peopleDOM = (
         peopleList.map((person, index) => {
-                return <div className='people-data'
+                return <div className={classList(person)}
                         key={index}
                         >  
                             <div> {person.name} </div> 
