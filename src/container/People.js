@@ -119,10 +119,9 @@ class People extends Component {
         return (
             <div className= 'people-container'>
                 <div className="people-operations">
-                    <div className="search">    
-                        {/* <label>Search:</label> */}
-
+                    <div className="search-container">    
                         <input typee="text" placeholder='Search Name' onChange={ this.filterPersons.bind(this) }></input>
+                        <span className='clear-btn' >X</span>
                     </div>
                     <div className="create-new" onClick={this.createNew.bind(this)} className='create-new-btn'>Create New</div>
                     
@@ -144,7 +143,7 @@ class People extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        people: state.People
+        people: state.PeopleReducer.People
     }
 }
 

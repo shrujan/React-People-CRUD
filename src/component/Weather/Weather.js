@@ -1,11 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
-const Weather = () => {
+import Map from './Map'
+
+
+
+
+
+
+const Weather = (props) => {
+
+    const fetchWeatherDetails = (cooridinates) => {
+        console.log('Hi ', cooridinates)
+    }
+
     return (
         <div>
-            Weather
+            <h1>Todays Weather</h1>
+            <Map 
+                setLocation = { props.setLocation }
+                location = { props.location }
+                fetchWeather = { props.fetchWeather }
+                weatherDetails = { props.Weather }
+            >
+
+            </Map>
         </div>
     )
 }
 
-export default Weather;
+const mapStateToProps = (state) => {
+    console.log(state);
+
+    return {
+        Weather: state.WeatherReducer.weather,
+        location: state.WeatherReducer.location 
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        "fetchWeather": (cooridinates) => { dispatch({ type:'FETCH_WEATHER', location: cooridinates }) },
+        "setLocation": (cooridinates) => { dispatch({ type: 'SET_LOCATIONS', location: cooridinates}) }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Weather);

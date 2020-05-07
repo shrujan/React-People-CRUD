@@ -1,0 +1,66 @@
+#map {
+
+    width: 60%;
+    height: 500px;
+    margin: auto;
+}
+
+.coordinate {
+    text-align: center;
+    margin-top: 20px;
+    
+    button {
+        display: block;
+        height: 30px;
+        background-color: #ccc;
+        margin: 10px auto;
+    }
+}
+
+.details {
+    .header {
+        margin: auto;
+        text-align: center;
+        
+    }  
+
+    .breakdown {
+        width:60%;
+        margin: auto;
+
+        .row.special {
+            font-size: 30px;
+            font-weight: 700;
+            font-family: 'Courier New', Courier, monospace;
+
+            .col1 {
+                background-color: #ccc;
+            }
+            .col2 {
+                background-color: #ccc;
+            }
+        }
+
+        .row {
+            width: 100%;
+            text-align: center;
+            line-height: 30px;
+            
+            .col1 {
+                width: 49.5%;
+                float: left;
+                border: 1px solid #ccc;
+
+            }
+
+            .col2{
+                width: 49.5%;
+                float: left;
+                border: 1px solid #ccc;
+
+            }
+        }
+    }
+   
+
+}

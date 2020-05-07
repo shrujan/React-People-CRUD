@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Routing = () => {
     return (
-        <div>
+        <div className="links">
                 <ul>
                     <li>
                         <Link to='/' >People</Link>

@@ -15,7 +15,7 @@ const Header = (prop) => {
 
             <BrowserRouter>
                 <div className="Header">
-                    <h1> POC Demo </h1>
+                    <h1> People Base</h1>
                     <Routing></Routing>
                 </div>
 

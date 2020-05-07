@@ -33,13 +33,27 @@
             background-color: #8487e2cc;
         }
 
-        .search {
+        .search-container {
             width: 30%;
             float: right;
             line-height: 80px;
             
             input {
                 @extend %people-text-field;
+            }
+
+            .clear-btn {
+                position: absolute;
+                float: right;
+                right: 30px;
+            }
+
+            @media screen and (max-width: 400px){
+                .clear-btn {
+                    position: absolute;
+                    float: right;
+                    right: 30px;
+                }
             }
         }
 
