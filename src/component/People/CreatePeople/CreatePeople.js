@@ -5,6 +5,7 @@ import './Create-people.scss';
 
 const CreateNew = (props) => {
     // console.log(props.modifyPerson('', 'hello'));
+    console.log('hello create new ')
 
     let peopleForm = (
         <div className="create-people">
@@ -54,5 +55,5 @@ const CreateNew = (props) => {
 }
 
 
-
-export default CreateNew;
+// React Memo optimization for functionaal component. Execute if any props change not otherwise
+export default React.memo(CreateNew);

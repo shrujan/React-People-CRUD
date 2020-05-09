@@ -1,8 +1,12 @@
 .Header {
-    background-color: #cccccc;
-    color: red;
+    background-color: #0b0e77;
+    color: #ffffff;
     height: 100px;
-
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0 ;
+    
     h1 {
         width: 20%;
         float: left;
@@ -24,8 +28,9 @@
 
                 a {
                     margin-right: 10px;
-                    color: #000;
+                    color: #fff;
                     text-decoration: none;
+                    cursor: pointer;
                 }
 
             }

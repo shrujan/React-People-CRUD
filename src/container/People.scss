@@ -1,3 +1,5 @@
+$create-btn-diamentions: 30px;
+
 %people-text-field {
     height: 30px;
     width: 90%;
@@ -13,6 +15,7 @@
 }
 
 .people-container {
+    margin-top: 110px;
     .people-operations {
         width: 100%;
         height: 80px;
@@ -21,12 +24,18 @@
             display: inline-block;
             font-size: 25px;
             border: 1px solid #ccc;
-            border-radius: 21px;
             padding: 10px;
             margin: 10px;
-            background-color: #393fdecc;
+            background-color: #25b700;
             color: #fdfafa;
             cursor: pointer;
+            width: $create-btn-diamentions;
+            height: $create-btn-diamentions;
+            border-radius: $create-btn-diamentions;
+            text-align: center;
+            line-height: $create-btn-diamentions;
+            font-size: 50px;
+            font-weight: 900;
         }
 
         .create-new-btn:hover {

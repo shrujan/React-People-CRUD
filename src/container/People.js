@@ -1,10 +1,14 @@
-import React, { Component }  from 'react';
+import React, { Component, PureComponent }  from 'react';
 import { connect } from 'react-redux';
 
 import PeopleList from '../component/People/PeopleList/PeopleLIst';
 import CreateNew from '../component/People/CreatePeople/CreatePeople';
 import './People.scss';
 import * as actions from '../Store/Action/Action'
+
+// use PureComponent instead checking every props for changes. if there are no changes then  do not execute 
+// .. life cycle hooks. No need to use shouldComponentUpdate
+// class People extends PureComponent {
 
 class People extends Component {
 
@@ -21,6 +25,17 @@ class People extends Component {
         this.deleteUser = this.deleteUser.bind(this);
         this.getNewUserData = this.getNewUserData.bind(this);
         this.editUsers = this.editUsers.bind(this);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('people updatio')
+        // do not update this component if people data is not changed or showMOdal is not changed
+        if (this.props.people !== nextProps.people 
+            || this.props.showModal !== nextProps.showModal
+            || this.state.editUserObj !== nextProps.editUserObj) {
+            return true;
+        }
+        return false
     }
 
     getNewUserData(event, mode, id) {
@@ -121,9 +136,9 @@ class People extends Component {
                 <div className="people-operations">
                     <div className="search-container">    
                         <input typee="text" placeholder='Search Name' onChange={ this.filterPersons.bind(this) }></input>
-                        <span className='clear-btn' >X</span>
+                        {/* <span className='clear-btn' >X</span> */}
                     </div>
-                    <div className="create-new" onClick={this.createNew.bind(this)} className='create-new-btn'>Create New</div>
+                    <div className="create-new" onClick={this.createNew.bind(this)} className='create-new-btn'>+</div>
                     
                 </div>
                 <PeopleList

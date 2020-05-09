@@ -1,22 +1,25 @@
-import React, { Fragment }  from 'react';
+import React  from 'react';
 
 import './Peoplelist.scss';
 
 const classList = (person) => {
     let classNames = 'people-data';
 
-    if (person.age === undefined || 
-        person.address === undefined || 
-        person.name === undefined) {
+    if ((person.age === undefined || person.age === '')|| 
+        (person.address === undefined || person.address === '') || 
+        (person.name === undefined || person.name === '')) {
         classNames += " warning"
     }
+
+    console.log('class' , classNames);
+
 
     return classNames;
 }
 
 const generateDOM = (prop) => {
     let peopleDOM = null;
-    let peopleList= JSON.parse(prop.People);
+    let peopleList = JSON.parse(prop.People);
     peopleDOM = (
         peopleList.map((person, index) => {
                 return <div className={classList(person)}

@@ -6,6 +6,8 @@ $table-width: 25%;
     height: $height;
     line-height: $height;
     text-align: center;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 %edit-delete {
@@ -17,8 +19,9 @@ $table-width: 25%;
 
 .list-header {
     @extend %list-style;
-    background: #ccc;
+    background: #0b0e77;
     display: flex;
+    color: #fff;
 
     
     div {

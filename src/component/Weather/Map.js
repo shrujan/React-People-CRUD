@@ -43,8 +43,6 @@ const Map = (props) => {
   
               props.setLocation([position.coords.latitude, position.coords.longitude]);
 
-              
-              
               infoWindow.setPosition(pos);
               infoWindow.setContent('Location found.');
               infoWindow.open(map);
@@ -57,7 +55,7 @@ const Map = (props) => {
             handleLocationError(false, infoWindow, map.getCenter(), map);
           }
 
-    }, [])
+    }, []); // run only once when page loads, pass pram in array to observe the value and run only when it changes
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos, map) {
         infoWindow.setPosition(pos);
@@ -118,11 +116,9 @@ const Map = (props) => {
                 </div>
                 <div className="details">
                     <div className="header">
-                        <h1>Weather details</h1>
+                        {/* <h1>Weather details</h1> */}
                     </div>
-                    {/* <div className="breakdown"> */}
                     {generateWeatherDOM(props.weatherDetails)}
-                    {/* </div> */}
                 </div>
             </div>
 

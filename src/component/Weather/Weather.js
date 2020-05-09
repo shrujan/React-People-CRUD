@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
-import Map from './Map'
-
-
-
+import Map from './Map';
+import Rain from '../../Assets/Video/Rain.mp4'
+import './Weather.scss'
 
 
 
@@ -15,8 +14,13 @@ const Weather = (props) => {
     }
 
     return (
-        <div>
+        <div className="weather-container">
             <h1>Todays Weather</h1>
+        {/* {Rain} */}
+            <video autoPlay muted loop>
+                <source src={Rain} type="video/mp4" />
+                Your browser does not support HTML5 video.
+            </video>
             <Map 
                 setLocation = { props.setLocation }
                 location = { props.location }

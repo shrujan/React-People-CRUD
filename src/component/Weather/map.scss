@@ -1,3 +1,7 @@
+@use './Weather.scss';
+
+$backgroundColor: #0b0e77;
+
 #map {
 
     width: 60%;
@@ -8,12 +12,15 @@
 .coordinate {
     text-align: center;
     margin-top: 20px;
+    @extend %text-style;
     
     button {
         display: block;
         height: 30px;
-        background-color: #ccc;
-        margin: 10px auto;
+        background-color: $backgroundColor;
+        margin: 20px auto;
+        color: #fff;
+        // font-size: 25px;
     }
 }
 
@@ -21,12 +28,15 @@
     .header {
         margin: auto;
         text-align: center;
+        @extend %text-style;
+
         
     }  
 
     .breakdown {
         width:60%;
         margin: auto;
+        @extend %text-style;
 
         .row.special {
             font-size: 30px;
@@ -34,10 +44,10 @@
             font-family: 'Courier New', Courier, monospace;
 
             .col1 {
-                background-color: #ccc;
+                background-color: $backgroundColor;
             }
             .col2 {
-                background-color: #ccc;
+                background-color: $backgroundColor;
             }
         }
 
@@ -49,14 +59,14 @@
             .col1 {
                 width: 49.5%;
                 float: left;
-                border: 1px solid #ccc;
+                border: 1px solid $backgroundColor;
 
             }
 
             .col2{
                 width: 49.5%;
                 float: left;
-                border: 1px solid #ccc;
+                border: 1px solid $backgroundColor;
 
             }
         }

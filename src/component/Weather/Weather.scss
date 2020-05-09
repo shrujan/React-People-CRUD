@@ -1,0 +1,27 @@
+%text-style {
+    color: #fff;
+        font-weight: bolder;
+        font-size: larger;
+        text-shadow: 2px 2px #000, -2px -2px #000 ;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.weather-container {
+    margin-top: 110px;
+    
+    h1 {
+        font-size: 40px;
+        text-align: center;
+        @extend %text-style;
+    }
+
+    video {
+        min-width: 100%;
+        position: fixed;
+        /* margin: 0; */
+        /* min-height: 100%; */
+        top: 0;
+        left: 0;
+        z-index:-999;
+    }
+}
